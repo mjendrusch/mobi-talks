@@ -1,0 +1,29 @@
+%% main.tex
+%% Copyright 2020 Michael Jendrusch
+
+\documentclass[
+      12pt,oneside,a4paper]{book}
+
+\include{setup}
+
+\newcommand{\myname}{Mobi Musterperson}
+\newcommand{\mynumber}{1234567}
+\newcommand{\myhome}{Heidelberg}
+\newcommand{\mymajor}{Molekulare Biotechnologie, M.Sc.}
+\newcommand{\mydate}{2020/01/01}
+
+\begin{document}
+
+\include{titlepage}
+\include{disclaimer}
+
+\tableofcontents
+
+\include{talks/bpc_1}
+\include{talks/wifo_1}
+\include{talks/info_1}
+
+% pdf-file containing the Laufzettel an screenshots for online talks
+\includepdf[noautoscale, landscape]{rattenschwanz/rattenschwanz}
+
+\end{document}

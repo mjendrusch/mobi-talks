@@ -1,0 +1,124 @@
+%% setup.tex
+%% Copyright 2020 Michael Jendrusch
+
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagestyle{plain}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\usepackage[english]{babel}
+\usepackage[babel=true]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage[explicit]{titlesec}
+\usepackage{xcolor}
+\usepackage{charter}
+
+\usepackage{rotating, graphicx}
+\usepackage{titlesec}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\newcommand\ChapterFont{\rmfamily\selectfont\huge}
+\newcommand\SectionFont{\bfseries\rmfamily\selectfont\Large}
+\newcommand\typename{WiFo}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\titlespacing*{\chapter}{0pt}{-80pt}{45pt}
+
+\definecolor{wifo}{RGB}{18, 130, 140}
+\definecolor{info}{RGB}{140, 18, 42}
+\definecolor{bpc}{RGB}{0, 0, 0}
+\newcommand\pcolor{black}
+\newcommand{\restyle}[1]{
+    \renewcommand\pcolor{#1}
+    \renewcommand\typename{\MakeUppercase{#1}}
+}
+\newcommand{\talk}[6]{
+    \restyle{#2}
+    \renewcommand{\baselinestretch}{1.0}
+    \chapter[{\color{#2} #1\hfill\break (#6, #3, #5)\hfill}]{#1}
+    {\color{\pcolor}
+    \hfill #6
+    \vskip0.01ex
+    #3\hfill#4\hfill#5
+    \vskip1.2ex
+    \titlerule[0.4ex]
+    \vskip3ex
+    }
+}
+\titleformat{\chapter}[display]
+  {\normalfont}
+  {}
+  {0pt}
+  {%
+    \begin{tikzpicture}
+    \node[
+      draw=\pcolor,
+      rounded corners,
+      outer sep=0pt,
+      inner sep=6pt,
+      rotate=90,
+      line width=1pt,
+      font=\Large\color{\pcolor}\bfseries
+      ]
+      (chapname) 
+      {\typename};
+    \node[
+      fill=\pcolor,
+      minimum width=2cm,
+      minimum height=2.3cm,
+      rounded corners,
+      anchor=west,
+      font=\color{white}\fontsize{40}{48}\selectfont\bfseries
+      ]
+      at ([xshift=6pt]chapname.south)
+      (chapnumber)
+      {\thechapter};
+    \node[
+      anchor=west,
+      text width=\textwidth-4cm,
+      font=\bfseries\Large
+      ] 
+      at ([xshift=10pt]chapnumber.east)
+      {\color{\pcolor}#1};
+    \end{tikzpicture}%
+    \vspace{-40pt}
+  }
+
+ \titleformat{name=\chapter,numberless}[block]
+ {\normalfont\selectfont\huge\color{\pcolor}}
+ {}
+ {0pt}
+ {\parbox[b]{70pt}{\mbox{}}%
+ \hspace{15pt}%
+ \parbox[b]{\dimexpr\textwidth-15pt}{%
+ \raggedright\bfseries#1\vskip6pt%
+ }%
+ }
+ \titleformat{\section}
+ {\normalfont\small\sffamily\SectionFont\color{\pcolor}}
+ {\colorbox{\pcolor}{%
+        \parbox[c][16pt][c]{40pt}{%
+            \centering\textcolor{white}{\SectionFont\Large\rmfamily\thesection}%
+        }%
+    }%
+ }
+ {1em}
+ {#1}
+ [\vspace{-0.755\baselineskip}%
+ \color{\pcolor}\hspace*{\dimexpr40pt+2\fboxsep\relax}%
+ \rule{\dimexpr\textwidth-40pt-2\fboxsep\relax}{1pt}%
+ ]
+  \usepackage{mathtools}
+  \usepackage{amsmath, amsthm, amssymb, amsfonts, enumerate}
+ \renewcommand{\qedsymbol}{$\blacksquare$}
+
+\usepackage{lipsum}
