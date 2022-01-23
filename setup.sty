@@ -1,10 +1,11 @@
-%% setup.tex
+%% setup.sty
 %% Copyright 2020 Michael Jendrusch
+%% Adapted by Anton Hanke 2021
 
-\usepackage{pdfpages}
-\usepackage{tikz}
+\RequirePackage{pdfpages}
+\RequirePackage{tikz}
 \usetikzlibrary{matrix}
-\usepackage{fancyhdr}
+\RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \pagestyle{plain}
 \lhead{}
@@ -13,18 +14,24 @@
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
-\usepackage[english]{babel}
-\usepackage[babel=true]{csquotes}
-\usepackage[T1]{fontenc}
-\usepackage[explicit]{titlesec}
-\usepackage{xcolor}
-\usepackage{charter}
+\RequirePackage[greek, ngerman, main=english]{babel}
+\RequirePackage[babel=true]{csquotes}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{xcolor}
+\RequirePackage{charter}
 
-\usepackage{rotating, graphicx}
-\usepackage{titlesec}
-\usepackage{tcolorbox}
-\usepackage{hyperref}
-\usepackage{graphicx}
+\RequirePackage{rotating, graphicx}
+\RequirePackage{titlesec}
+\RequirePackage{tcolorbox}
+\RequirePackage{graphicx}
+\RequirePackage{longtable}
+\RequirePackage{pdflscape}
+\RequirePackage[hidelinks]{hyperref}\hypersetup{
+colorlinks = true,
+allcolors = [rgb]{0.122, 0.133, 0.443},
+}
 \newcommand\ChapterFont{\rmfamily\selectfont\huge}
 \newcommand\SectionFont{\bfseries\rmfamily\selectfont\Large}
 \newcommand\typename{WiFo}
@@ -117,8 +124,8 @@
  \color{\pcolor}\hspace*{\dimexpr40pt+2\fboxsep\relax}%
  \rule{\dimexpr\textwidth-40pt-2\fboxsep\relax}{1pt}%
  ]
-  \usepackage{mathtools}
-  \usepackage{amsmath, amsthm, amssymb, amsfonts, enumerate}
+  \RequirePackage{mathtools}
+  \RequirePackage{amsmath, amsthm, amssymb, amsfonts, enumerate}
  \renewcommand{\qedsymbol}{$\blacksquare$}
 
-\usepackage{lipsum}
+\RequirePackage{lipsum}
